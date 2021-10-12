@@ -1,0 +1,138 @@
+@import "src/nullStyle.scss";
+
+.LeftBar {
+ width: 40%;
+ overflow-y: scroll;
+ display: inline-block;
+ border-right: 2px solid #cfcdcd;
+
+ &::-webkit-scrollbar {
+  width: 0;
+ }
+}
+
+.leftHeader {
+ background-color: #f5f5f5;
+ height: 160px;
+ padding: 15px;
+ border-bottom: 2px solid #cfcdcd;
+ position: relative;
+
+ .auth {
+  display: flex;
+
+  img {
+   margin-right: 30px;
+  }
+
+  .logoutBtn {
+   padding: 16px 42px;
+   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+   line-height: 1.25;
+   background: #5c5c5c;
+   text-decoration: none;
+   color: white;
+   font-size: 16px;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   position: relative;
+   transition: background-color 0.6s ease;
+   overflow: hidden;
+   &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform-style: flat;
+    transform: translate3d(-50%, -50%, 0);
+    background: rgba(white, 0.1);
+    border-radius: 100%;
+    transition: width 0.3s ease, height 0.3s ease;
+   }
+   &:focus,
+   &:hover {
+    background: darken(#c8c3c2, 7%);
+   }
+   &:active {
+    &:after {
+     width: 200px;
+     height: 200px;
+    }
+   }
+  }
+ }
+}
+
+.chats {
+ font-size: 28px;
+ color: #30c0f5;
+ margin-left: 15px;
+ margin-top: 45px;
+ margin-bottom: 50px;
+ cursor: default;
+}
+
+.keywordsField {
+ align-items: center;
+ background-color: #ffffff;
+ border: 1px solid #cfcdcd;
+ border-radius: 20px;
+ display: flex;
+ margin-top: 30px;
+ padding-left: 21px;
+ height: 40px;
+ width: auto;
+
+ input {
+  font-size: 15px;
+  line-height: 31px;
+  margin-top: 12px;
+  margin-left: 19px;
+  margin-bottom: 16px;
+  width: 85%;
+  color: #7b7b7b;
+ }
+}
+
+.chatsList {
+ list-style-type: none;
+ min-width: 400px;
+ margin: 0;
+ padding: 0;
+}
+
+.ChatsListItem {
+ border-bottom: 1px #dcdcdc solid;
+ display: flex;
+ height: 120px;
+ align-items: center;
+ cursor: pointer;
+ padding-left: 15px;
+ position: relative;
+
+ .textInfo {
+  margin-top: 10px;
+  width: 60%;
+  margin-left: 30px;
+  margin-right: 20px;
+  line-height: 20px;
+
+  overflow: hidden;
+ }
+
+ .userFullName {
+  font-size: 18px;
+ }
+
+ .message {
+  font-size: 16px;
+  color: #979494;
+ }
+
+ .date {
+  font-size: 14px;
+  color: #3a3a3a;
+ }
+}
